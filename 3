@@ -1,0 +1,867 @@
+vikapple@vikapple:~$ echo привет
+привет
+vikapple@vikapple:~$ echo привет > privet.txt
+vikapple@vikapple:~$ ls -la
+итого 92
+drwxr-x--- 17 vikapple vikapple 4096 ноя 20 21:14  .
+drwxr-xr-x  8 root     root     4096 ноя  9 00:42  ..
+-rw-------  1 vikapple vikapple 3316 ноя  9 01:30  .bash_history
+-rw-r--r--  1 vikapple vikapple  220 мар 31  2024  .bash_logout
+-rw-r--r--  1 vikapple vikapple 3771 мар 31  2024  .bashrc
+drwx------ 11 vikapple vikapple 4096 ноя  7 00:32  .cache
+drwx------ 15 vikapple vikapple 4096 ноя  9 06:50  .config
+drwx------  2 vikapple vikapple 4096 ноя  6 22:57  .gnupg
+-rw-------  1 vikapple vikapple   20 ноя  6 23:46  .lesshst
+drwx------  4 vikapple vikapple 4096 ноя  6 19:21  .local
+-rw-rw-r--  1 vikapple vikapple   13 ноя 20 21:14  privet.txt
+-rw-r--r--  1 vikapple vikapple  807 мар 31  2024  .profile
+drwx------  5 vikapple vikapple 4096 ноя  6 21:00  snap
+drwx------  2 vikapple vikapple 4096 ноя  8 22:38  .ssh
+-rw-r--r--  1 vikapple vikapple    0 ноя  6 23:06  .sudo_as_admin_successful
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Видео
+drwxr-xr-x  3 vikapple vikapple 4096 ноя  9 01:24  Документы
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Загрузки
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Изображения
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Музыка
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Общедоступные
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  8 23:59 'Рабочий стол'
+drwxrwxr-x  2 vikapple vikapple 4096 ноя  6 20:31 'Создать папку'
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Шаблоны
+vikapple@vikapple:~$ cat privet.txt
+привет
+vikapple@vikapple:~$ cat /etc
+cat: /etc: Это каталог
+vikapple@vikapple:~$ cat /etc 2> errors.txt
+vikapple@vikapple:~$ cat errors.txt
+cat: /etc: Это каталог
+vikapple@vikapple:~$ ls -la
+итого 96
+drwxr-x--- 17 vikapple vikapple 4096 ноя 20 21:17  .
+drwxr-xr-x  8 root     root     4096 ноя  9 00:42  ..
+-rw-------  1 vikapple vikapple 3316 ноя  9 01:30  .bash_history
+-rw-r--r--  1 vikapple vikapple  220 мар 31  2024  .bash_logout
+-rw-r--r--  1 vikapple vikapple 3771 мар 31  2024  .bashrc
+drwx------ 11 vikapple vikapple 4096 ноя  7 00:32  .cache
+drwx------ 15 vikapple vikapple 4096 ноя  9 06:50  .config
+-rw-rw-r--  1 vikapple vikapple   33 ноя 20 21:17  errors.txt
+drwx------  2 vikapple vikapple 4096 ноя  6 22:57  .gnupg
+-rw-------  1 vikapple vikapple   20 ноя  6 23:46  .lesshst
+drwx------  4 vikapple vikapple 4096 ноя  6 19:21  .local
+-rw-rw-r--  1 vikapple vikapple   13 ноя 20 21:14  privet.txt
+-rw-r--r--  1 vikapple vikapple  807 мар 31  2024  .profile
+drwx------  5 vikapple vikapple 4096 ноя  6 21:00  snap
+drwx------  2 vikapple vikapple 4096 ноя  8 22:38  .ssh
+-rw-r--r--  1 vikapple vikapple    0 ноя  6 23:06  .sudo_as_admin_successful
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Видео
+drwxr-xr-x  3 vikapple vikapple 4096 ноя  9 01:24  Документы
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Загрузки
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Изображения
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Музыка
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Общедоступные
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  8 23:59 'Рабочий стол'
+drwxrwxr-x  2 vikapple vikapple 4096 ноя  6 20:31 'Создать папку'
+drwxr-xr-x  2 vikapple vikapple 4096 ноя  6 19:21  Шаблоны
+vikapple@vikapple:~$ 
+
+vikapple@vikapple:~$ cut --help
+Использование: cut ПАРАМЕТР… [ФАЙЛ]…
+Печатает выбранные части строк из каждого ФАЙЛА на стандартный вывод.
+
+Если ФАЙЛ не задан или задан как -, читает стандартный ввод.
+
+Аргументы, обязательные для длинных параметров, обязательны и для коротких.
+  -b, --bytes=СПИСОК             выбрать только заданные байты
+  -c, --characters=СПИСОК        выбрать только заданные символы
+  -d, --delimiter=РАЗДЕЛИТЕЛЬ    использовать для разделения полей РАЗДЕЛИТЕЛЬ
+                                 вместо табуляции
+  -f, --fields=СПИСОК            выбрать только заданные поля; также печатать
+                                 все строки, не содержащие разделителей, если
+                                 только не задан параметр -s
+  -n                             (игнорируется)
+      --complement               дополнить множество выбранных байт, символов
+                                 или полей
+  -s, --only-delimited           не печатать строки, не содержащие
+                                 разделителей
+      --output-delimiter=СТРОКА  использовать СТРОКУ для разделения полей при
+                                 выводе, по умолчанию используется разделитель
+                                 для ввода
+  -z, --zero-terminated    разделитель строк NUL, а не символ
+                           новой строки
+      --help     показать эту справку и выйти
+      --version  показать информацию о версии и выйти
+
+Используйте один и только один из параметров: -b, -c или -f.  СПИСКИ
+состоят из диапазона или нескольких диапазонов, разделенных запятыми.
+Выбранные части входного файла печатаются в том порядке, в котором они
+появляются на входе, и печатаются ровно один раз.
+Диапазоны задаются следующим образом:
+
+  Н     Н-ный байт, символ или поле; отсчитывается от 1
+  Н-    от Н-ного байта, символа или поля до конца строки
+  Н-М   от Н-ного до М-ного (включительно) байта, символа или поля
+  -М    от первого до М-ного (включительно) байта, символа или поля
+
+Страница справки по GNU coreutils: <https://www.gnu.org/software/coreutils/>
+Об ошибках в переводе сообщений сообщайте по адресу <https://translationproject.org/team/ru.html>
+Полная документация: <https://www.gnu.org/software/coreutils/cut>
+или доступная локально: info '(coreutils) cut invocation'
+vikapple@vikapple:~$ ls -la /etc
+итого 1176
+drwxr-xr-x 140 root                 root                 12288 ноя  9 01:23 .
+drwxr-xr-x  23 root                 root                  4096 ноя  6 19:12 ..
+-rw-r--r--   1 root                 root                  3444 июл  5  2023 adduser.conf
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:38 alsa
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:15 alternatives
+-rw-r--r--   1 root                 root                   335 апр  8  2024 anacrontab
+-rw-r--r--   1 root                 root                   433 апр  8  2024 apg.conf
+drwxr-xr-x   5 root                 root                  4096 авг 27 18:38 apm
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:38 apparmor
+drwxr-xr-x   9 root                 root                  4096 ноя  6 19:18 apparmor.d
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:39 apport
+drwxr-xr-x   9 root                 root                  4096 ноя  6 18:57 apt
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:39 avahi
+-rw-r--r--   1 root                 root                  2319 мар 31  2024 bash.bashrc
+-rw-r--r--   1 root                 root                    45 янв 25  2020 bash_completion
+-rw-r--r--   1 root                 root                   367 авг  2  2022 bindresvport.blacklist
+drwxr-xr-x   2 root                 root                  4096 апр 19  2024 binfmt.d
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 bluetooth
+-rw-r-----   1 root                 root                    33 авг 27 18:41 brlapi.key
+drwxr-xr-x   7 root                 root                  4096 авг 27 18:39 brltty
+-rw-r--r--   1 root                 root                 30571 мар 31  2024 brltty.conf
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:37 ca-certificates
+-rw-r--r--   1 root                 root                  6288 авг 27 18:37 ca-certificates.conf
+drwxr-s---   2 root                 dip                   4096 авг 27 18:39 chatscripts
+drwxr-xr-x   5 root                 root                  4096 ноя  6 19:25 cloud
+drwxr-xr-x   2 colord               colord                4096 ноя  6 19:21 colord
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:03 console-setup
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 cracklib
+drwx------   2 root                 root                  4096 апр 19  2024 credstore
+drwx------   2 root                 root                  4096 апр 19  2024 credstore.encrypted
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 cron.d
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 cron.daily
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 cron.hourly
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 cron.monthly
+-rw-r--r--   1 root                 root                  1136 мар 31  2024 crontab
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 cron.weekly
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 cron.yearly
+drwxr-xr-x   5 root                 lp                    4096 ноя 20 21:14 cups
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 cupshelpers
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:37 dbus-1
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:39 dconf
+-rw-r--r--   1 root                 root                  2967 апр 12  2024 debconf.conf
+-rw-r--r--   1 root                 root                    11 апр 22  2024 debian_version
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 debuginfod
+drwxr-xr-x   3 root                 root                  4096 ноя  7 00:09 default
+-rw-r--r--   1 root                 root                  1706 июл  5  2023 deluser.conf
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 depmod.d
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:37 dhcp
+-rw-r--r--   1 root                 root                  1429 мар 31  2024 dhcpcd.conf
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:41 dictionaries-common
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:37 dpkg
+-rw-r--r--   1 root                 root                   685 апр  8  2024 e2scrub.conf
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:38 emacs
+-rw-r--r--   1 root                 root                   106 авг 27 18:37 environment
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:41 environment.d
+-rw-r--r--   1 root                 root                  1853 окт 18  2022 ethertypes
+drwxr-xr-x   5 root                 root                  4096 авг 27 18:39 fonts
+-rw-r--r--   1 root                 root                    20 апр  4  2024 fprintd.conf
+-rw-r--r--   1 root                 root                   473 ноя  6 19:12 fstab
+-rw-r--r--   1 root                 root                   694 апр  8  2024 fuse.conf
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:39 fwupd
+-rw-r--r--   1 root                 root                  2584 янв 31  2024 gai.conf
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:39 gdb
+drwxr-xr-x   8 root                 root                  4096 ноя  6 19:18 gdm3
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:41 geoclue
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:38 ghostscript
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:38 glvnd
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 gnome
+drwxr-xr-x   2 gnome-remote-desktop gnome-remote-desktop  4096 авг 27 18:41 gnome-remote-desktop
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 gnutls
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 groff
+-rw-r--r--   1 root                 root                  1253 ноя  9 01:23 group
+-rw-r--r--   1 root                 root                  1267 ноя  9 00:48 group-
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:42 grub.d
+-rw-r-----   1 root                 shadow                1048 ноя  9 01:23 gshadow
+-rw-r-----   1 root                 shadow                1058 ноя  9 00:48 gshadow-
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:37 gss
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 gtk-2.0
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:41 gtk-3.0
+-rw-r--r--   1 root                 root                  4436 окт  6  2022 hdparm.conf
+-rw-r--r--   1 root                 root                    92 апр 22  2024 host.conf
+-rw-r--r--   1 root                 root                     9 ноя  6 19:15 hostname
+-rw-r--r--   1 root                 root                   223 ноя  6 19:15 hosts
+-rw-r--r--   1 root                 root                   411 авг 27 18:39 hosts.allow
+-rw-r--r--   1 root                 root                   711 авг 27 18:39 hosts.deny
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:41 hp
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:39 ifplugd
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 init
+drwxr-xr-x   2 root                 root                  4096 ноя  7 00:09 init.d
+drwxr-xr-x   5 root                 root                  4096 авг 27 18:39 initramfs-tools
+-rw-r--r--   1 root                 root                  1875 мар 31  2024 inputrc
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:41 insserv.conf.d
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:18 ipp-usb
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:37 iproute2
+-rw-r--r--   1 root                 root                    26 авг 23 17:20 issue
+-rw-r--r--   1 root                 root                    19 авг 23 17:20 issue.net
+drwxr-xr-x   6 root                 root                  4096 ноя  6 19:12 kernel
+-rw-r--r--   1 root                 root                  1308 мар 31  2024 kerneloops.conf
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 krb5.conf.d
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 ldap
+-rw-r--r--   1 root                 root                 69339 ноя  6 19:21 ld.so.cache
+-rw-r--r--   1 root                 root                    34 авг  2  2022 ld.so.conf
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 ld.so.conf.d
+-rw-r--r--   1 root                 root                   267 апр 22  2024 legal
+-rw-r--r--   1 root                 root                    27 апр  8  2024 libao.conf
+-rw-r--r--   1 root                 root                   191 мар 31  2024 libaudit.conf
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:38 libblockdev
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 libibverbs.d
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 libnl-3
+drwxr-xr-x   2 root                 root                  4096 апр  8  2024 libpaper.d
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:47 libreoffice
+-rw-r--r--   1 root                 root                  2996 мар 30  2024 locale.alias
+-rw-r--r--   1 root                 root                    17 ноя  6 19:21 locale.conf
+-rw-r--r--   1 root                 root                  9563 ноя  6 19:21 locale.gen
+lrwxrwxrwx   1 root                 root                    33 ноя  6 19:21 localtime -> /usr/share/zoneinfo/Europe/Moscow
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:38 logcheck
+-rw-r--r--   1 root                 root                 12345 фев 22  2024 login.defs
+-rw-r--r--   1 root                 root                   586 апр  8  2024 logrotate.conf
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:18 logrotate.d
+-rw-r--r--   1 root                 root                   104 авг 23 17:20 lsb-release
+-r--r--r--   1 root                 root                    33 ноя  6 19:03 machine-id
+-rw-r--r--   1 root                 root                   111 мар 31  2024 magic
+-rw-r--r--   1 root                 root                   111 мар 31  2024 magic.mime
+-rw-r--r--   1 root                 root                  5230 апр  8  2024 manpath.config
+-rw-r--r--   1 root                 root                 75113 июл 12  2023 mime.types
+-rw-r--r--   1 root                 root                   744 апр  8  2024 mke2fs.conf
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:39 ModemManager
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:12 modprobe.d
+-rw-r--r--   1 root                 root                   212 авг 27 18:37 modules
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 modules-load.d
+lrwxrwxrwx   1 root                 root                    19 авг 27 18:37 mtab -> ../proc/self/mounts
+-rw-r--r--   1 root                 root                 11424 мая 23  2023 nanorc
+-rw-r--r--   1 root                 root                   767 мар 31  2024 netconfig
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:21 netplan
+drwxr-xr-x   6 root                 root                  4096 авг 27 18:39 network
+drwxr-xr-x   8 root                 root                  4096 авг 27 18:37 networkd-dispatcher
+drwxr-xr-x   8 root                 root                  4096 авг 27 18:41 NetworkManager
+-rw-r--r--   1 root                 root                    91 апр 22  2024 networks
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 newt
+-rwxr-xr-x   1 root                 root                   243 окт 19  2023 nftables.conf
+-rw-r--r--   1 root                 root                   594 авг 27 18:39 nsswitch.conf
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:39 openvpn
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 opt
+lrwxrwxrwx   1 root                 root                    21 авг 23 17:20 os-release -> ../usr/lib/os-release
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:41 PackageKit
+-rw-r--r--   1 root                 root                   552 окт 13  2022 pam.conf
+drwxr-xr-x   2 root                 root                  4096 ноя  7 00:09 pam.d
+-rw-r--r--   1 root                 root                     3 авг 27 18:39 papersize
+-rw-r--r--   1 root                 root                  3094 ноя  9 01:23 passwd
+-rw-r--r--   1 root                 root                  3133 ноя  9 00:43 passwd-
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 pcmcia
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:38 perl
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:38 pki
+drwxr-xr-x   2 root                 root                  4096 мар 31  2024 plymouth
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:39 pm
+-rw-r--r--   1 root                 root                  7649 авг 27 18:39 pnm2ppa.conf
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:38 polkit-1
+drwxr-xr-x   8 root                 dip                   4096 авг 27 18:39 ppp
+lrwxrwxrwx   1 root                 root                    18 ноя  6 19:18 printcap -> /run/cups/printcap
+-rw-r--r--   1 root                 root                   582 апр 22  2024 profile
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 profile.d
+-rw-r--r--   1 root                 root                  3144 окт 18  2022 protocols
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:39 pulse
+-rw-------   1 root                 root                     0 авг 27 18:37 .pwd.lock
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 python3
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:18 python3.12
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:15 rc0.d
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:15 rc1.d
+drwxr-xr-x   2 root                 root                  4096 ноя  7 00:09 rc2.d
+drwxr-xr-x   2 root                 root                  4096 ноя  7 00:09 rc3.d
+drwxr-xr-x   2 root                 root                  4096 ноя  7 00:09 rc4.d
+drwxr-xr-x   2 root                 root                  4096 ноя  7 00:09 rc5.d
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:15 rc6.d
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 rcS.d
+lrwxrwxrwx   1 root                 root                    39 авг 27 18:37 resolv.conf -> ../run/systemd/resolve/stub-resolv.conf
+-rw-r--r--   1 root                 root                   648 авг 27 18:37 .resolv.conf.systemd-resolved.bak
+lrwxrwxrwx   1 root                 root                    13 апр  8  2024 rmt -> /usr/sbin/rmt
+-rw-r--r--   1 root                 root                   911 окт 18  2022 rpc
+-rw-r--r--   1 root                 root                  1213 мар 22  2024 rsyslog.conf
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 rsyslog.d
+-rw-r--r--   1 root                 root                  5772 янв  7  2024 rygel.conf
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:41 sane.d
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:39 security
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 selinux
+-rw-r--r--   1 root                 root                 10593 мар 31  2024 sensors3.conf
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 sensors.d
+-rw-r--r--   1 root                 root                 12813 мар 28  2021 services
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:41 sgml
+-rw-r-----   1 root                 shadow                1612 ноя  9 01:23 shadow
+-rw-r-----   1 root                 shadow                1639 ноя  9 01:14 shadow-
+-rw-r--r--   1 root                 root                   118 авг 27 18:37 shells
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 skel
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 snmp
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:39 speech-dispatcher
+drwxr-xr-x   4 root                 root                  4096 ноя  7 00:09 ssh
+drwxr-xr-x   4 root                 root                  4096 ноя  6 19:18 ssl
+drwx--x--x   3 root                 root                  4096 авг 27 18:39 sssd
+-rw-r--r--   1 root                 root                    98 ноя  9 01:23 subgid
+-rw-r--r--   1 root                 root                   117 ноя  9 00:42 subgid-
+-rw-r--r--   1 root                 root                    98 ноя  9 01:23 subuid
+-rw-r--r--   1 root                 root                   117 ноя  9 00:42 subuid-
+-rw-r--r--   1 root                 root                  4343 апр  8  2024 sudo.conf
+-r--r-----   1 root                 root                  1831 ноя  9 01:22 sudoers
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 sudoers.d
+-rw-r--r--   1 root                 root                  9804 апр  8  2024 sudo_logsrvd.conf
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 supercat
+-rw-r--r--   1 root                 root                  2209 мар 24  2024 sysctl.conf
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 sysctl.d
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 sysstat
+drwxr-xr-x   6 root                 root                  4096 авг 27 18:39 systemd
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 terminfo
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:12 thermald
+-rw-r--r--   1 root                 root                    14 ноя  6 19:21 timezone
+drwxr-xr-x   2 root                 root                  4096 апр 19  2024 tmpfiles.d
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:37 ubuntu-advantage
+-rw-r--r--   1 root                 root                  1260 янв 27  2023 ucf.conf
+drwxr-xr-x   4 root                 root                  4096 авг 27 18:37 udev
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 udisks2
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:39 ufw
+-rw-r--r--   1 root                 root                   208 авг 27 18:37 .updated
+drwxr-xr-x   3 root                 root                  4096 авг 27 18:40 update-manager
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:41 update-motd.d
+drwxr-xr-x   2 root                 root                  4096 апр  8  2024 update-notifier
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 UPower
+-rw-r--r--   1 root                 root                  1523 апр  8  2024 usb_modeswitch.conf
+drwxr-xr-x   2 root                 root                  4096 дек 17  2023 usb_modeswitch.d
+lrwxrwxrwx   1 root                 root                    16 авг 27 18:37 vconsole.conf -> default/keyboard
+-rw-r--r--   1 root                 root                    51 мар  7  2022 vdpau_wrapper.cfg
+drwxr-xr-x   2 root                 root                  4096 ноя  6 19:18 vim
+drwxr-xr-x   4 root                 root                  4096 ноя  6 19:15 vmware-tools
+lrwxrwxrwx   1 root                 root                    23 фев 26  2024 vtrgb -> /etc/alternatives/vtrgb
+drwxr-xr-x   5 root                 root                  4096 авг 27 18:38 vulkan
+-rw-r--r--   1 root                 root                  4942 июн 19 15:14 wgetrc
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:39 wpa_supplicant
+drwxr-xr-x  12 root                 root                  4096 авг 27 18:41 X11
+-rw-r--r--   1 root                 root                   681 апр  8  2024 xattr.conf
+drwxr-xr-x   6 root                 root                  4096 авг 27 18:38 xdg
+drwxr-xr-x   2 root                 root                  4096 авг 27 18:41 xml
+-rw-r--r--   1 root                 root                   460 янв 20  2023 zsh_command_not_found
+vikapple@vikapple:~$ ls -la /etc | cut -c 1-10
+итого
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r-----
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-s---
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwx------
+drwx------
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+-rw-r-----
+-rw-r-----
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+lrwxrwxrwx
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+-r--r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+lrwxrwxrwx
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+lrwxrwxrwx
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+lrwxrwxrwx
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-------
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+lrwxrwxrwx
+-rw-r--r--
+lrwxrwxrwx
+-rw-r--r--
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r-----
+-rw-r-----
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwx--x--x
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-r--r-----
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+lrwxrwxrwx
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+lrwxrwxrwx
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+drwxr-xr-x
+drwxr-xr-x
+-rw-r--r--
+vikapple@vikapple:~$ ls -la /etc | cut -c 1-10 | sort
+drwx------
+drwx------
+drwxr-s---
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwxr-xr-x
+drwx--x--x
+lrwxrwxrwx
+lrwxrwxrwx
+lrwxrwxrwx
+lrwxrwxrwx
+lrwxrwxrwx
+lrwxrwxrwx
+lrwxrwxrwx
+lrwxrwxrwx
+-r--r-----
+-r--r--r--
+-rw-------
+-rw-r-----
+-rw-r-----
+-rw-r-----
+-rw-r-----
+-rw-r-----
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rw-r--r--
+-rwxr-xr-x
+итого
+vikapple@vikapple:~$ ls -la /etc | cut -c 1-10 | sort | uniq
+drwx------
+drwxr-s---
+drwxr-xr-x
+drwx--x--x
+lrwxrwxrwx
+-r--r-----
+-r--r--r--
+-rw-------
+-rw-r-----
+-rw-r--r--
+-rwxr-xr-x
+итого
+vikapple@vikapple:~$ 
+
+vikapple@vikapple:~$ sudo systemctl start ssh
+[sudo] пароль для vikapple: 
+vikapple@vikapple:~$ sudo nano /etc/ssh/sshd_config
+vikapple@vikapple:~$ sudo systemctl restart sshd
+vikapple@vikapple:~$ sudo systemctl reload sshd
+
+vikapple@vikapple:~$ cat > file_new.txt
+еуеуеуеуеу 
+vikapple@vikapple:~$ 
+
+vikapple@vikapple:~$ ps -aux | grep mc
+vikapple    1900  0.0  0.1 245712  7296 ?        Sl   22:19   0:00 /usr/libexec/ibus-memconf
+vikapple    5375  0.0  0.2  33748 11392 pts/4    S+   23:18   0:00 mc
+vikapple    5388  0.0  0.0  17836  2304 pts/5    S+   23:19   0:00 grep --color=auto mc
+vikapple@vikapple:~$ sudo kill -9 5375
+[sudo] пароль для vikapple: 
+vikapple@vikapple:~$ ps -aux | grep mc
+vikapple    1900  0.0  0.1 245712  7296 ?        Sl   22:19   0:00 /usr/libexec/ibus-memconf
+vikapple    5410  0.0  0.0  17836  2304 pts/5    S+   23:20   0:00 grep --color=auto mc
+vikapple@vikapple:~$ 
+
+
