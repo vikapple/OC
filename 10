@@ -1,0 +1,202 @@
+vikapple@vikapple:~$  sudo apt install gnome-terminal
+[sudo] пароль для vikapple: 
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Уже установлен пакет gnome-terminal самой новой версии (3.52.0-1ubuntu2).
+gnome-terminal помечен как установленный вручную.
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 212 пакетов не обновлено.
+vikapple@vikapple:~$ sudo apt-get update             
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc                                                                    sudo chmod a+r /etc/apt/keyrings/docker.asc
+                                           
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Сущ:2 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease              
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease            
+Сущ:4 http://security.ubuntu.com/ubuntu noble-security InRelease               
+Игн:5 http://nginx.org/packages/mainline/debian focal InRelease                
+Сущ:6 https://download.docker.com/linux/ubuntu noble InRelease                 
+Ошб:7 http://nginx.org/packages/mainline/debian focal Release                  
+  404  Not Found [IP: 52.58.199.22 80]
+Чтение списков пакетов… Готово            
+E: Репозиторий «http://nginx.org/packages/mainline/debian focal Release» не содержит файла Release.
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому по умолчанию он отключён.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной странице apt-secure(8).
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Уже установлен пакет ca-certificates самой новой версии (20240203).
+Будут установлены следующие дополнительные пакеты:
+  libcurl3t64-gnutls libcurl4t64
+Следующие пакеты будут обновлены:
+  curl libcurl3t64-gnutls libcurl4t64
+Обновлено 3 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 209 пакетов не обновлено.
+Необходимо скачать 901 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 0 B.
+Хотите продолжить? [Д/н]  
+Пол:1 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 curl amd64 8.5.0-2ubuntu10.6 [226 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl4t64 amd64 8.5.0-2ubuntu10.6 [341 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl3t64-gnutls amd64 8.5.0-2ubuntu10.6 [333 kB]
+Получено 901 kB за 1с (1 057 kB/s)            
+(Чтение базы данных … на данный момент установлено 170485 файлов и каталогов.)
+Подготовка к распаковке …/curl_8.5.0-2ubuntu10.6_amd64.deb …
+Распаковывается curl (8.5.0-2ubuntu10.6) на замену (8.5.0-2ubuntu10.5) …
+Подготовка к распаковке …/libcurl4t64_8.5.0-2ubuntu10.6_amd64.deb …
+Распаковывается libcurl4t64:amd64 (8.5.0-2ubuntu10.6) на замену (8.5.0-2ubuntu10.5) …
+Подготовка к распаковке …/libcurl3t64-gnutls_8.5.0-2ubuntu10.6_amd64.deb …
+Распаковывается libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.6) на замену (8.5.0-2ubuntu10.5) …
+Настраивается пакет libcurl4t64:amd64 (8.5.0-2ubuntu10.6) …
+Настраивается пакет libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.6) …
+Настраивается пакет curl (8.5.0-2ubuntu10.6) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+Обрабатываются триггеры для libc-bin (2.39-0ubuntu8.3) …
+Сущ:1 http://ru.archive.ubuntu.com/ubuntu noble InRelease
+Игн:2 http://nginx.org/packages/mainline/debian focal InRelease                
+Сущ:3 http://ru.archive.ubuntu.com/ubuntu noble-updates InRelease              
+Сущ:4 http://security.ubuntu.com/ubuntu noble-security InRelease               
+Ошб:5 http://nginx.org/packages/mainline/debian focal Release                  
+  404  Not Found [IP: 3.125.197.172 80]
+Сущ:6 http://ru.archive.ubuntu.com/ubuntu noble-backports InRelease            
+Сущ:7 https://download.docker.com/linux/ubuntu noble InRelease                 
+Пол:8 https://download.docker.com/linux/ubuntu noble/stable amd64 Packages [16,6 kB]
+Чтение списков пакетов… Готово        
+E: Репозиторий «http://nginx.org/packages/mainline/debian focal Release» не содержит файла Release.
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому по умолчанию он отключён.
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной странице apt-secure(8).
+vikapple@vikapple:~$ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Будут установлены следующие дополнительные пакеты:
+  docker-ce-rootless-extras git git-man liberror-perl libslirp0 pigz
+  slirp4netns
+Предлагаемые пакеты:
+  aufs-tools cgroupfs-mount | cgroup-lite git-daemon-run | git-daemon-sysvinit
+  git-doc git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+Следующие НОВЫЕ пакеты будут установлены:
+  containerd.io docker-buildx-plugin docker-ce docker-ce-cli
+  docker-ce-rootless-extras docker-compose-plugin git git-man liberror-perl
+  libslirp0 pigz slirp4netns
+Обновлено 0 пакетов, установлено 12 новых пакетов, для удаления отмечено 0 пакетов, и 209 пакетов не обновлено.
+Необходимо скачать 129 MB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 469 MB.
+Хотите продолжить? [Д/н] 
+Пол:1 http://ru.archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65,6 kB]
+Пол:2 https://download.docker.com/linux/ubuntu noble/stable amd64 containerd.io amd64 1.7.24-1 [29,5 MB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 liberror-perl all 0.17029-2 [25,6 kB]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 git-man all 1:2.43.0-1ubuntu7.1 [1 100 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu noble-updates/main amd64 git amd64 1:2.43.0-1ubuntu7.1 [3 679 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu noble/main amd64 libslirp0 amd64 4.7.0-1ubuntu3 [63,8 kB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu noble/universe amd64 slirp4netns amd64 1.2.1-1build2 [34,9 kB]
+Пол:8 https://download.docker.com/linux/ubuntu noble/stable amd64 docker-buildx-plugin amd64 0.19.2-1~ubuntu.24.04~noble [30,7 MB]
+Пол:9 https://download.docker.com/linux/ubuntu noble/stable amd64 docker-ce-cli amd64 5:27.4.0-1~ubuntu.24.04~noble [15,1 MB]
+Пол:10 https://download.docker.com/linux/ubuntu noble/stable amd64 docker-ce amd64 5:27.4.0-1~ubuntu.24.04~noble [25,8 MB]
+Пол:11 https://download.docker.com/linux/ubuntu noble/stable amd64 docker-ce-rootless-extras amd64 5:27.4.0-1~ubuntu.24.04~noble [9 588 kB]
+Пол:12 https://download.docker.com/linux/ubuntu noble/stable amd64 docker-compose-plugin amd64 2.31.0-1~ubuntu.24.04~noble [12,8 MB]
+Получено 129 MB за 26с (4 875 kB/s)                                            
+Выбор ранее не выбранного пакета pigz.
+(Чтение базы данных … на данный момент установлено 170485 файлов и каталогов.)
+Подготовка к распаковке …/00-pigz_2.8-1_amd64.deb …
+Распаковывается pigz (2.8-1) …
+Выбор ранее не выбранного пакета containerd.io.
+Подготовка к распаковке …/01-containerd.io_1.7.24-1_amd64.deb …
+Распаковывается containerd.io (1.7.24-1) …
+Выбор ранее не выбранного пакета docker-buildx-plugin.
+Подготовка к распаковке …/02-docker-buildx-plugin_0.19.2-1~ubuntu.24.04~noble_amd64.deb …
+Распаковывается docker-buildx-plugin (0.19.2-1~ubuntu.24.04~noble) …
+Выбор ранее не выбранного пакета docker-ce-cli.
+Подготовка к распаковке …/03-docker-ce-cli_5%3a27.4.0-1~ubuntu.24.04~noble_amd64.deb …
+Распаковывается docker-ce-cli (5:27.4.0-1~ubuntu.24.04~noble) …
+Выбор ранее не выбранного пакета docker-ce.
+Подготовка к распаковке …/04-docker-ce_5%3a27.4.0-1~ubuntu.24.04~noble_amd64.deb …
+Распаковывается docker-ce (5:27.4.0-1~ubuntu.24.04~noble) …
+Выбор ранее не выбранного пакета docker-ce-rootless-extras.
+Подготовка к распаковке …/05-docker-ce-rootless-extras_5%3a27.4.0-1~ubuntu.24.04~noble_amd64.deb …
+Распаковывается docker-ce-rootless-extras (5:27.4.0-1~ubuntu.24.04~noble) …
+Выбор ранее не выбранного пакета docker-compose-plugin.
+Подготовка к распаковке …/06-docker-compose-plugin_2.31.0-1~ubuntu.24.04~noble_amd64.deb …
+Распаковывается docker-compose-plugin (2.31.0-1~ubuntu.24.04~noble) …
+Выбор ранее не выбранного пакета liberror-perl.
+Подготовка к распаковке …/07-liberror-perl_0.17029-2_all.deb …
+Распаковывается liberror-perl (0.17029-2) …
+Выбор ранее не выбранного пакета git-man.
+Подготовка к распаковке …/08-git-man_1%3a2.43.0-1ubuntu7.1_all.deb …
+Распаковывается git-man (1:2.43.0-1ubuntu7.1) …
+Выбор ранее не выбранного пакета git.
+Подготовка к распаковке …/09-git_1%3a2.43.0-1ubuntu7.1_amd64.deb …
+Распаковывается git (1:2.43.0-1ubuntu7.1) …
+Выбор ранее не выбранного пакета libslirp0:amd64.
+Подготовка к распаковке …/10-libslirp0_4.7.0-1ubuntu3_amd64.deb …
+Распаковывается libslirp0:amd64 (4.7.0-1ubuntu3) …
+Выбор ранее не выбранного пакета slirp4netns.
+Подготовка к распаковке …/11-slirp4netns_1.2.1-1build2_amd64.deb …
+Распаковывается slirp4netns (1.2.1-1build2) …
+Настраивается пакет liberror-perl (0.17029-2) …
+Настраивается пакет docker-buildx-plugin (0.19.2-1~ubuntu.24.04~noble) …
+Настраивается пакет containerd.io (1.7.24-1) …
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
+Настраивается пакет docker-compose-plugin (2.31.0-1~ubuntu.24.04~noble) …
+Настраивается пакет docker-ce-cli (5:27.4.0-1~ubuntu.24.04~noble) …
+Настраивается пакет libslirp0:amd64 (4.7.0-1ubuntu3) …
+Настраивается пакет pigz (2.8-1) …
+Настраивается пакет git-man (1:2.43.0-1ubuntu7.1) …
+Настраивается пакет docker-ce-rootless-extras (5:27.4.0-1~ubuntu.24.04~noble) …
+Настраивается пакет slirp4netns (1.2.1-1build2) …
+Настраивается пакет docker-ce (5:27.4.0-1~ubuntu.24.04~noble) …
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+Настраивается пакет git (1:2.43.0-1ubuntu7.1) …
+Обрабатываются триггеры для man-db (2.12.0-4build2) …
+Обрабатываются триггеры для libc-bin (2.39-0ubuntu8.3) …
+vikapple@vikapple:~$ sudo docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+c1ec31eb5944: Pull complete 
+Digest: sha256:5b3cc85e16e3058003c13b7821318369dad01dac3dbb877aac3c28182255c724
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+vikapple@vikapple:~$ docker -v
+Docker version 27.4.0, build bde2b89
+
+#запуск контейнера с Ubuntu
+vikapple@vikapple:~$ sudo docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+a391b43b1f18   hello-world   "/hello"   4 minutes ago   Exited (0) 4 minutes ago             musing_tesla
+vikapple@vikapple:~$ sudo docker run ubuntu
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+de44b265507a: Pull complete 
+Digest: sha256:80dd3c3b9c6cecb9f1667e9290b3bc61b78c2678c02cbdae5f0fea92cc6734ab
+Status: Downloaded newer image for ubuntu:latest
+vikapple@vikapple:~$ sudo docker ps -a
+CONTAINER ID   IMAGE         COMMAND       CREATED          STATUS                      PORTS     NAMES
+1e25ca7a41ad   ubuntu        "/bin/bash"   24 seconds ago   Exited (0) 22 seconds ago             amazing_shirley
+a391b43b1f18   hello-world   "/hello"      6 minutes ago    Exited (0) 6 minutes ago              musing_tesla
+vikapple@vikapple:~$ 
