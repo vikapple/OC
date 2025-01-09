@@ -1,0 +1,101 @@
+#include <linux/module.h>
+#include <linux/fs.h>
+#include <linux/cdev.h>
+#include <linux/uaccess.h>
+
+#define DEVICE_NAME "mychardev"
+#define BUFFER_SIZE 1024
+
+static char device_buffer[BUFFER_SIZE];
+static int open_count = 0;
+static dev_t dev_num;
+static struct cdev my_cdev;
+
+//открытие устройства
+static int dev_open(struct inode *inode, struct file *file) {
+    open_count++;
+    printk(KERN_INFO "Device opened %d times\n", open_count);
+    return 0;
+}
+
+//закрытие устройства
+static int dev_release(struct inode *inode, struct file *file) {
+    printk(KERN_INFO "Device closed\n");
+    return 0;
+}
+
+//чтение данных из устройства
+static ssize_t dev_read(struct file *file, char __user *user_buffer, size_t len, loff_t *offset) {
+    size_t bytes_to_read = min(len, (size_t)(BUFFER_SIZE - *offset));
+
+    if (bytes_to_read == 0) {
+        printk(KERN_INFO "Nothing to read\n");
+        return 0;
+    }
+
+    if (copy_to_user(user_buffer, device_buffer + *offset, bytes_to_read)) {
+        return -EFAULT;
+    }
+
+    *offset += bytes_to_read;
+    printk(KERN_INFO "Read %zu bytes from device\n", bytes_to_read);
+    return bytes_to_read;
+}
+
+//запись данных в устройство
+static ssize_t dev_write(struct file *file, const char __user *user_buffer, size_t len, loff_t *offset) {
+    size_t bytes_to_write = min(len, (size_t)(BUFFER_SIZE - *offset));
+
+    if (bytes_to_write == 0) {
+        printk(KERN_INFO "No space left to write\n");
+        return -ENOMEM;
+    }
+
+    if (copy_from_user(device_buffer + *offset, user_buffer, bytes_to_write)) {
+        return -EFAULT;
+    }
+
+    *offset += bytes_to_write;
+    printk(KERN_INFO "Wrote %zu bytes to device\n", bytes_to_write);
+    return bytes_to_write;
+}
+
+static struct file_operations fops = {
+    .owner = THIS_MODULE,
+    .open = dev_open,
+    .release = dev_release,
+    .read = dev_read,
+    .write = dev_write,
+};
+
+//инициализация модуля
+static int __init mychardev_init(void) {
+    if (alloc_chrdev_region(&dev_num, 0, 1, DEVICE_NAME) < 0) {
+        printk(KERN_ALERT "Failed to allocate a device number\n");
+        return -1;
+    }
+
+    cdev_init(&my_cdev, &fops);
+    if (cdev_add(&my_cdev, dev_num, 1) < 0) {
+        unregister_chrdev_region(dev_num, 1);
+        printk(KERN_ALERT "Failed to add cdev\n");
+        return -1;
+    }
+
+    printk(KERN_INFO "Char device registered with major %d and minor %d\n", MAJOR(dev_num), MINOR(dev_num));
+    return 0;
+}
+
+//удаление модуля
+static void __exit mychardev_exit(void) {
+    cdev_del(&my_cdev);
+    unregister_chrdev_region(dev_num, 1);
+    printk(KERN_INFO "Char device unregistered\n");
+}
+
+module_init(mychardev_init);
+module_exit(mychardev_exit);
+
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Your Name");
+MODULE_DESCRIPTION("Simple Character Device Driver");
