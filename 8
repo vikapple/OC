@@ -1,0 +1,47 @@
+vikapple@vikapple:~$ mkfifo my_fifo
+vikapple@vikapple:~$ ls -l
+итого 36
+prw-r--r-- 1 vikapple gg    0 ноя 19 00:03  my_fifo
+drwx------ 5 vikapple gg 4096 окт 31 00:00  snap
+drwxr-xr-x 2 vikapple gg 4096 окт 11 00:05  Видео
+drwxr-xr-x 2 vikapple gg 4096 окт 11 00:05  Документы
+drwxr-xr-x 2 vikapple gg 4096 окт 11 00:05  Загрузки
+drwxr-xr-x 2 vikapple gg 4096 окт 11 00:05  Изображения
+drwxr-xr-x 2 vikapple gg 4096 окт 11 00:05  Музыка
+drwxr-xr-x 2 vikapple gg 4096 окт 11 00:05  Общедоступные
+drwxr-xr-x 2 vikapple gg 4096 окт 11 00:05 'Рабочий стол'
+drwxr-xr-x 2 vikapple gg 4096 окт 11 00:05  Шаблоны
+vikapple@vikapple:~$ echo "TTT" > my_fifo
+vikapple@vikapple:~$ cat my_fifo
+TTT
+vikapple@vikapple:~$ kill -l
+ 1) SIGHUP  2) SIGINT  3) SIGQUIT  4) SIGILL  5) SIGTRAP
+ 6) SIGABRT  7) SIGBUS  8) SIGFPE  9) SIGKILL 10) SIGUSR1
+11) SIGSEGV 12) SIGUSR2 13) SIGPIPE 14) SIGALRM 15) SIGTERM
+16) SIGSTKFLT 17) SIGCHLD 18) SIGCONT 19) SIGSTOP 20) SIGTSTP
+21) SIGTTIN 22) SIGTTOU 23) SIGURG 24) SIGXCPU 25) SIGXFSZ
+26) SIGVTALRM 27) SIGPROF 28) SIGWINCH 29) SIGIO 30) SIGPWR
+31) SIGSYS 34) SIGRTMIN 35) SIGRTMIN+1 36) SIGRTMIN+2 37) SIGRTMIN+3
+38) SIGRTMIN+4 39) SIGRTMIN+5 40) SIGRTMIN+6 41) SIGRTMIN+7 42) SIGRTMIN+8
+43) SIGRTMIN+9 44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9 56) SIGRTMAX-8 57) SIGRTMAX-7
+58) SIGRTMAX-6 59) SIGRTMAX-5 60) SIGRTMAX-4 61) SIGRTMAX-3 62) SIGRTMAX-2
+63) SIGRTMAX-1 64) SIGRTMAX 
+vikapple@vikapple:~$ cat my_fifo &
+[1] 3145
+vikapple@vikapple:~$ ps aux | grep cat
+vikapple      2072  0.0  0.3 2602148 27280 ?       Sl   ноя18   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+vikapple      2098  0.0  0.1 332512 11776 ?        Ssl  ноя18   0:00 /usr/libexec/gsd-print-notifications
+vikapple      3145  0.0  0.0  16960  1792 pts/0    S    00:09   0:00 cat my_fifo
+vikapple      3147  0.0  0.0  17836  2304 pts/0    S+   00:09   0:00 grep --color=auto cat
+vikapple@vikapple:~$ kill -SIGTERM 3145
+vikapple@vikapple:~$ ps aux | grep cat
+vikapple      2072  0.0  0.3 2602148 27280 ?       Sl   ноя18   0:00 /usr/bin/gjs -m /usr/share/gnome-shell/org.gnome.Shell.Notifications
+vikapple      2098  0.0  0.1 332512 11776 ?        Ssl  ноя18   0:00 /usr/libexec/gsd-print-notifications
+vikapple      3159  0.0  0.0  17836  2304 pts/0    S+   00:11   0:00 grep --color=auto cat
+[1]+  Завершено      cat my_fifo
+vikapple@vikapple:~$ echo "KKK" | grep "K"
+KKK
+vikapple@vikapple:~$ ls -l | wc -l
+11
