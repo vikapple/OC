@@ -1,0 +1,144 @@
+vikapple@vikapple:~$ cd l4
+bash: cd: l4: Нет такого файла или каталога
+vikapple@vikapple:~$ mkdir l4
+vikapple@vikapple:~$ cd l4
+vikapple@vikapple:~/l4$ nano file1
+vikapple@vikapple:~/l4$ ls -la
+итого 12
+drwxrwxr-x  2 vikapple vikapple 4096 ноя 21 18:17 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 file1
+vikapple@vikapple:~/l4$ cp file1 file2
+vikapple@vikapple:~/l4$ ls -la
+итого 16
+drwxrwxr-x  2 vikapple vikapple 4096 ноя 21 18:17 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 file1
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 file2
+vikapple@vikapple:~/l4$ ln -s file1 file3
+vikapple@vikapple:~/l4$ ln file1 file4
+vikapple@vikapple:~/l4$ ls -la
+итого 20
+drwxrwxr-x  2 vikapple vikapple 4096 ноя 21 18:18 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+-rw-rw-r--  2 vikapple vikapple   13 ноя 21 18:17 file1
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 file2
+lrwxrwxrwx  1 vikapple vikapple    5 ноя 21 18:18 file3 -> file1
+-rw-rw-r--  2 vikapple vikapple   13 ноя 21 18:17 file4
+vikapple@vikapple:~/l4$ ls -il
+итого 12
+1449209 -rw-rw-r-- 2 vikapple vikapple 13 ноя 21 18:17 file1
+1449208 -rw-rw-r-- 1 vikapple vikapple 13 ноя 21 18:17 file2
+1449210 lrwxrwxrwx 1 vikapple vikapple  5 ноя 21 18:18 file3 -> file1
+1449209 -rw-rw-r-- 2 vikapple vikapple 13 ноя 21 18:17 file4
+vikapple@vikapple:~/l4$ rm file1
+vikapple@vikapple:~/l4$ ls -la
+итого 16
+drwxrwxr-x  2 vikapple vikapple 4096 ноя 21 18:18 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 file2
+lrwxrwxrwx  1 vikapple vikapple    5 ноя 21 18:18 file3 -> file1
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 file4
+vikapple@vikapple:~/l4$ cat file2
+cjltsfjbhjb
+
+vikapple@vikapple:~/l4$ cat file3
+cat: file3: Нет такого файла или каталога
+vikapple@vikapple:~/l4$ cat file4
+cjltsfjbhjb
+
+vikapple@vikapple:~/l4$ 
+
+vikapple@vikapple:~/l4$ ls -la
+итого 16
+drwxrwxr-x  2 vikapple vikapple 4096 ноя 21 18:18 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 file2
+lrwxrwxrwx  1 vikapple vikapple    5 ноя 21 18:18 file3 -> file1
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 file4
+vikapple@vikapple:~/l4$ mv file2 new_file2
+vikapple@vikapple:~/l4$ mv file4 new_file4
+vikapple@vikapple:~/l4$ ls -la
+итого 16
+drwxrwxr-x  2 vikapple vikapple 4096 ноя 21 18:20 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+lrwxrwxrwx  1 vikapple vikapple    5 ноя 21 18:18 file3 -> file1
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 new_file2
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 new_file4
+vikapple@vikapple:~/l4$ ln -s new_file2 link_to_file2
+vikapple@vikapple:~/l4$ ln -s new_file4 link_to_file4
+vikapple@vikapple:~/l4$ ls -la
+итого 16
+drwxrwxr-x  2 vikapple vikapple 4096 ноя 21 18:21 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+lrwxrwxrwx  1 vikapple vikapple    5 ноя 21 18:18 file3 -> file1
+lrwxrwxrwx  1 vikapple vikapple    9 ноя 21 18:21 link_to_file2 -> new_file2
+lrwxrwxrwx  1 vikapple vikapple    9 ноя 21 18:21 link_to_file4 -> new_file4
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 new_file2
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 new_file4
+vikapple@vikapple:~/l4$ mkdir links
+vikapple@vikapple:~/l4$ mv link_to_file4 links
+vikapple@vikapple:~/l4$ mv link_to_file2 links
+vikapple@vikapple:~/l4$ ls -la
+итого 20
+drwxrwxr-x  3 vikapple vikapple 4096 ноя 21 18:24 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+lrwxrwxrwx  1 vikapple vikapple    5 ноя 21 18:18 file3 -> file1
+drwxrwxr-x  2 vikapple vikapple 4096 ноя 21 18:24 links
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 new_file2
+-rw-rw-r--  1 vikapple vikapple   13 ноя 21 18:17 new_file4
+vikapple@vikapple:~/l4$ cd links
+vikapple@vikapple:~/l4/links$ ls -la
+итого 8
+drwxrwxr-x 2 vikapple vikapple 4096 ноя 21 18:24 .
+drwxrwxr-x 3 vikapple vikapple 4096 ноя 21 18:24 ..
+lrwxrwxrwx 1 vikapple vikapple    9 ноя 21 18:21 link_to_file2 -> new_file2
+lrwxrwxrwx 1 vikapple vikapple    9 ноя 21 18:21 link_to_file4 -> new_file4
+vikapple@vikapple:~/l4/links$ ln -s /home/user/l4/new_file2 new_link_to_file2
+vikapple@vikapple:~/l4/links$ ln -s /home/user/l4/new_file4 new_link_to_file4
+vikapple@vikapple:~/l4/links$ ls -la
+итого 8
+drwxrwxr-x 2 vikapple vikapple 4096 ноя 21 18:28 .
+drwxrwxr-x 3 vikapple vikapple 4096 ноя 21 18:24 ..
+lrwxrwxrwx 1 vikapple vikapple    9 ноя 21 18:21 link_to_file2 -> new_file2
+lrwxrwxrwx 1 vikapple vikapple    9 ноя 21 18:21 link_to_file4 -> new_file4
+lrwxrwxrwx 1 vikapple vikapple   23 ноя 21 18:27 new_link_to_file2 -> /home/user/l4/new_file2
+lrwxrwxrwx 1 vikapple vikapple   23 ноя 21 18:28 new_link_to_file4 -> /home/user/l4/new_file4
+vikapple@vikapple:~/l4/links$ rm new_link_to_file2 
+vikapple@vikapple:~/l4/links$ rm new_link_to_file4
+vikapple@vikapple:~/l4/links$ ls -la
+итого 8
+drwxrwxr-x 2 vikapple vikapple 4096 ноя 21 18:29 .
+drwxrwxr-x 3 vikapple vikapple 4096 ноя 21 18:24 ..
+lrwxrwxrwx 1 vikapple vikapple    9 ноя 21 18:21 link_to_file2 -> new_file2
+lrwxrwxrwx 1 vikapple vikapple    9 ноя 21 18:21 link_to_file4 -> new_file4
+vikapple@vikapple:~/l4/links$ ln -s /home/vikapple/l4/new_file2 new_link_to_file2
+vikapple@vikapple:~/l4/links$ ln -s /home/vikapple/l4/new_file4 new_link_to_file4
+vikapple@vikapple:~/l4/links$ ls -la
+итого 8
+drwxrwxr-x 2 vikapple vikapple 4096 ноя 21 18:32 .
+drwxrwxr-x 3 vikapple vikapple 4096 ноя 21 18:24 ..
+lrwxrwxrwx 1 vikapple vikapple    9 ноя 21 18:21 link_to_file2 -> new_file2
+lrwxrwxrwx 1 vikapple vikapple    9 ноя 21 18:21 link_to_file4 -> new_file4
+lrwxrwxrwx 1 vikapple vikapple   27 ноя 21 18:32 new_link_to_file2 -> /home/vikapple/l4/new_file2
+lrwxrwxrwx 1 vikapple vikapple   27 ноя 21 18:32 new_link_to_file4 -> /home/vikapple/l4/new_file4
+vikapple@vikapple:~/l4/links$ 
+
+vikapple@vikapple:~/l4$ touch file1
+vikapple@vikapple:~/l4$ touch file2
+vikapple@vikapple:~/l4$ ls -la
+итого 20
+drwxrwxr-x  3 vikapple vikapple 4096 ноя 21 18:38 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+-rw-rw-r--  1 vikapple vikapple    0 ноя 21 18:38 file1
+-rw-rw-r--  1 vikapple vikapple    0 ноя 21 18:38 file2
+
+vikapple@vikapple:~/l4$ chmod go-rw file2
+vikapple@vikapple:~/l4$ ls -la
+итого 20
+drwxrwxr-x  3 vikapple vikapple 4096 ноя 21 18:38 .
+drwxr-x--- 19 vikapple vikapple 4096 ноя 21 18:17 ..
+-rw-rw-r--  1 vikapple vikapple    0 ноя 21 18:38 file1
+-rw-------  1 vikapple vikapple    0 ноя 21 18:38 file2
+vikapple@vikapple:~/l4$ 
+
